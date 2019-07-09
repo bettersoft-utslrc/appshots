@@ -10,7 +10,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/login">
+        android:background="@drawable/pantalla2">
 
         <EditText
             android:id="@+id/txtEmail"
@@ -18,15 +18,20 @@
             android:layout_height="56dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="404dp"
+            android:layout_marginTop="256dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:background="#8C0E213A"
             android:ems="10"
             android:hint="@string/enter_email"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20dp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.766"
+            app:layout_constraintHorizontal_bias="0.644"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,15 +45,20 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="180dp"
+            android:background="#8C0E213A"
             android:ems="10"
             android:hint="@string/enter_pasword"
             android:inputType="textPassword"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20dp"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.778"
+            app:layout_constraintHorizontal_bias="0.61"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtEmail"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.219" />
 
         <Button
             android:id="@+id/btnEntrar"
@@ -60,12 +70,33 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
+            android:background="#8C0E213A"
+            android:text="@string/entrar"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPassword"
-            app:layout_constraintVertical_bias="0.125"
-            tools:visibility="invisible" />
+            app:layout_constraintVertical_bias="0.246"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btnRegistrarse"
+            android:layout_width="143dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#8C0E213A"
+            android:text="@string/registrar"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEntrar"
+            app:layout_constraintVertical_bias="0.22" />
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

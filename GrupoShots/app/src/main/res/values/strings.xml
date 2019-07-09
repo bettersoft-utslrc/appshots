@@ -12,4 +12,5 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="confirmar_contra">Confirmar Contraseña </string>
     <string name="Usuario">Usuario</string>
+    <string name="registrar">REGISTRARSE</string>
 </resources>
