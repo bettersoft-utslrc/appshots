@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         *RecervaActivity
          */
     private void Cambiar() {
-        Intent cambio = new Intent (getApplication(),RecervaActivity.class);
-        startActivity(cambio);
+        Intent cambio = new Intent (MainActivity.this,RecervaActivity.class);
+        MainActivity.this.startActivity(cambio);
     }
 
 

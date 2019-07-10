@@ -26,6 +26,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RecervaActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -37,6 +41,11 @@ public class RecervaActivity extends AppCompatActivity implements View.OnClickLi
     private Button btonRegistrar;
     private ProgressDialog progressDialog;
 
+    /*
+    String usuario,correo, password, confPassword;
+
+    DatabaseReference dbAlt;
+*/
 
     //Declaramos un objeto firebaseAuth para nuestra base de datos firebase
     private FirebaseAuth firebaseAuth;
@@ -49,7 +58,9 @@ public class RecervaActivity extends AppCompatActivity implements View.OnClickLi
         //inicializamos el objeto firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance();
 
+
         //Referenciamos las vistas del archivo xml
+
         TextEmail = (EditText) findViewById(R.id.txtEmail);
         TextPassword = (EditText) findViewById(R.id.txtPassword);
         btonRegistrar = (Button) findViewById(R.id.btnRegistro);
@@ -68,9 +79,9 @@ public class RecervaActivity extends AppCompatActivity implements View.OnClickLi
     private void registrarUsuario(){
 
         //Obtenemos el email, nombre de usuario y la contraseña desde las cajas de texto
-        String email = TextEmail.getText().toString().trim();
-        String password  = TextPassword.getText().toString().trim();
-        String usuario = TextUsuario.getText().toString().trim();
+        final String email = TextEmail.getText().toString().trim();
+        final String password  = TextPassword.getText().toString().trim();
+        final String usuario = TextUsuario.getText().toString().trim();
         String ConfirmPassword = TextPasswordconfirm.getText().toString().trim();
 
         //Verificamos que las cajas de texto no esten vacías
@@ -97,12 +108,22 @@ public class RecervaActivity extends AppCompatActivity implements View.OnClickLi
         progressDialog.show();
 
         //creamos un nuevo usuario con el metodo createUserWithEmailAndPassword
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        /*
+                        Map<String, Object> map = new HashMap<>();
+                        map.put("Nombre", usuario);
+                        map.put("Correo", email);
+                        map.put("Contraseña",password);
+                        map.put("confirmContraseña",confPassword);
+
+                        String id = firebaseAuth.getCurrentUser().getUid();
+
+                        dbAlt.child("Nombre").child(id).setValue(map);*/
                         //verificamos que entre correctamente
-                        if(task.isSuccessful()){
+                        if(task.isSuccessful())
+                        {
 
                             Toast.makeText(RecervaActivity.this,"Se ha registrado el usuario con el email: "+ TextEmail.getText(),Toast.LENGTH_LONG).show();
                         }else{
@@ -112,6 +133,8 @@ public class RecervaActivity extends AppCompatActivity implements View.OnClickLi
                         progressDialog.dismiss();
                     }
                 });
+
+
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 

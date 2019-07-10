@@ -14,7 +14,7 @@
 
         <EditText
             android:id="@+id/txtEmail"
-            android:layout_width="288dp"
+            android:layout_width="300dp"
             android:layout_height="56dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
@@ -37,7 +37,7 @@
 
         <EditText
             android:id="@+id/txtPassword"
-            android:layout_width="282dp"
+            android:layout_width="300dp"
             android:layout_height="53dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
@@ -58,12 +58,14 @@
             app:layout_constraintHorizontal_bias="0.61"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtEmail"
-            app:layout_constraintVertical_bias="0.219" />
+            app:layout_constraintVertical_bias="0.219"
+            />
+
 
         <Button
             android:id="@+id/btnEntrar"
             android:layout_width="143dp"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
