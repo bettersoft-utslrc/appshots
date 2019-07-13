@@ -9,6 +9,7 @@ package com.example.gruposhots;
  */
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -27,140 +28,105 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RecervaActivity extends AppCompatActivity implements View.OnClickListener {
+public class RecervaActivity extends AppCompatActivity  {
+    private EditText nombre;
+    private EditText email;
+    private EditText pass;
+    //private EditText passConfirm;
+    private Button buttonRegistrar;
 
-    //aqui Definimos los objetos de la vista
-    private EditText TextEmail;
-    private EditText TextPassword;
-    private EditText TextPasswordconfirm;
-    private EditText TextUsuario;
-    private Button btonRegistrar;
-    private ProgressDialog progressDialog;
+   private String Nombre;
+   private String Email;
+    private String Password;
+  //  private String PasswordConfirm;
 
-    /*
-    String usuario,correo, password, confPassword;
+    FirebaseAuth nAuth;
+    DatabaseReference nData;
 
-    DatabaseReference dbAlt;
-*/
-
-    //Declaramos un objeto firebaseAuth para nuestra base de datos firebase
-    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recerva);
 
-        //inicializamos el objeto firebaseAuth
-        firebaseAuth = FirebaseAuth.getInstance();
+        nAuth = FirebaseAuth.getInstance();
+        nData = FirebaseDatabase.getInstance().getReference();
+
+    nombre = (EditText) findViewById(R.id.txtNombre);
+    email = (EditText ) findViewById(R.id.txtEmail);
+    pass = (EditText)findViewById(R.id.txtPassword);
+   // passConfirm = (EditText)findViewById(R.id.txtPasswordConfirm);
+    buttonRegistrar = (Button)findViewById(R.id.btnRegistro);
+
+    buttonRegistrar.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            Nombre = nombre.getText().toString();
+            Email = email.getText().toString();
+            Password = pass.getText().toString();
+            //PasswordConfirm = passConfirm.getText().toString();
+
+            if(!Nombre.isEmpty() && !Email.isEmpty() && !Password.isEmpty() )
+            {
+                if (Password.length() >=6)
+                {
+                    RegistrarUsuario();
+                }else
+                    {
+                        Toast.makeText(RecervaActivity.this, "El password debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
+                    }
 
 
-        //Referenciamos las vistas del archivo xml
+            }
+            else
+                {
+                    Toast.makeText(RecervaActivity.this, "Llenar los campos", Toast.LENGTH_SHORT).show();
+                }
 
-        TextEmail = (EditText) findViewById(R.id.txtEmail);
-        TextPassword = (EditText) findViewById(R.id.txtPassword);
-        btonRegistrar = (Button) findViewById(R.id.btnRegistro);
-        TextUsuario = (EditText) findViewById(R.id.txtUsuario);
-        TextPasswordconfirm = (EditText) findViewById(R.id.txtPasswordConfirm);
+        }
+    });
 
 
-        progressDialog = new ProgressDialog(this);
 
-        //agregamos el listener para el boton del registro
-        btonRegistrar.setOnClickListener(this);
     }
-
-
-    // metodo creado para registrar a los usuarios de la aplicacion
-    private void registrarUsuario(){
-
-        //Obtenemos el email, nombre de usuario y la contraseña desde las cajas de texto
-        final String email = TextEmail.getText().toString().trim();
-        final String password  = TextPassword.getText().toString().trim();
-        final String usuario = TextUsuario.getText().toString().trim();
-        String ConfirmPassword = TextPasswordconfirm.getText().toString().trim();
-
-        //Verificamos que las cajas de texto no esten vacías
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this,"Se debe ingresar un email",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(this,"Falta ingresar la contraseña",Toast.LENGTH_LONG).show();
-            return;
-        }
-        if(TextUtils.isEmpty(usuario)){
-            Toast.makeText(this,"Se debe ingresar un nombre de usuario",Toast.LENGTH_LONG).show();
-            return;
-        }
-        if(TextUtils.isEmpty(ConfirmPassword)){
-            Toast.makeText(this,"Debe confirmar la contraseña",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-            //mostramos un mensaje de progreso cuando se esta haciendo el registro
-        progressDialog.setMessage("Realizando registro en linea...");
-        progressDialog.show();
-
-        //creamos un nuevo usuario con el metodo createUserWithEmailAndPassword
-        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        /*
+        private void RegistrarUsuario()
+        {
+            nAuth.createUserWithEmailAndPassword(Email,Password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
                         Map<String, Object> map = new HashMap<>();
-                        map.put("Nombre", usuario);
-                        map.put("Correo", email);
-                        map.put("Contraseña",password);
-                        map.put("confirmContraseña",confPassword);
+                        map.put("Nombre", Nombre);
+                        map.put("Email", Email);
+                        map.put("Password", Password);
 
-                        String id = firebaseAuth.getCurrentUser().getUid();
 
-                        dbAlt.child("Nombre").child(id).setValue(map);*/
-                        //verificamos que entre correctamente
-                        if(task.isSuccessful())
-                        {
+                        String id = nAuth.getCurrentUser().getUid();
 
-                            Toast.makeText(RecervaActivity.this,"Se ha registrado el usuario con el email: "+ TextEmail.getText(),Toast.LENGTH_LONG).show();
-                        }else{
-                            //si no entra se miestra el siguiente mensaje
-                            Toast.makeText(RecervaActivity.this,"No se pudo registrar el usuario ",Toast.LENGTH_LONG).show();
-                        }
-                        progressDialog.dismiss();
+                        nData.child("Usuarios").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task2) {
+                                if(task2.isSuccessful()){
+                                    startActivity(new Intent(RecervaActivity.this, PromocionActivity.class));
+                                    finish();
+                                }
+                                else {
+                                    Toast.makeText(RecervaActivity.this, "No se pudieron crear los datos", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }else {
+                        Toast.makeText(RecervaActivity.this, "No se pudo registrar", Toast.LENGTH_SHORT).show();
                     }
-                });
+                }
+            });
+        }
 
-
-
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                .setDisplayName("Jane Q. User")
-                .build();
-
-        user.updateProfile(profileUpdates)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                           // Log.d(TAG, "User profile updated.");
-                        }
-                    }
-                });
-
-
-    }
-
-    @Override
-    public void onClick(View view) {
-        //Invocamos al método:
-
-        registrarUsuario();
-
-    }
 }
 
