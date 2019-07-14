@@ -8,6 +8,7 @@ package com.example.gruposhots;
  * base de datos
  *
  */
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -39,11 +40,13 @@ public class PromocionActivity extends AppCompatActivity
    DatabaseReference nRef;
 
 
+
     //Metodo onCreate cuando se incia la pantalla
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promocion);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -55,6 +58,8 @@ public class PromocionActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent cambio = new Intent (PromocionActivity.this,seleccionLocalActivity.class);
                 PromocionActivity.this.startActivity(cambio);
+
+
             }
         });
 
