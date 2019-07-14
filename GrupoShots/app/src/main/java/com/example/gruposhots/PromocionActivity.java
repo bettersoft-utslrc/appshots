@@ -71,7 +71,7 @@ public class PromocionActivity extends AppCompatActivity
         ActionBar actionBar = getSupportActionBar();
 
         //Set tittle
-        actionBar.setTitle("post List");
+        actionBar.setTitle("Promociones y Eventos");
 
 
         // referenciamos RecicleView desde la vista
