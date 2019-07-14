@@ -15,4 +15,5 @@
     <string name="registrar">REGISTRARSE</string>
     <string name="promos">PROMOCIONES</string>
     <string name="nombre">Nombre</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
 </resources>
