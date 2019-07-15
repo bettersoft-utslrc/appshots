@@ -147,6 +147,10 @@ public class PromocionActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+    private void Cambiar() {
+        Intent cambio = new Intent (PromocionActivity.this,seleccionLocalActivity.class);
+        PromocionActivity.this.startActivity(cambio);
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -155,7 +159,7 @@ public class PromocionActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.SlReservacion) {
-            // Handle the camera action
+            Cambiar();
         } else if (id == R.id.SlHistorialRes) {
 
         } else if (id == R.id.SlPerfil) {

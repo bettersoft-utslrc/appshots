@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#1b1b1b"
+    android:background="#000"
     android:orientation="vertical"
     android:padding="5dp"
     tools:context=".seleccionLocalActivity">
@@ -16,35 +16,43 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:background="#212121"
+            >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Selecciona el local"
+            android:text="Seleccionar el local"
             android:textColor="#FFF"
             android:textSize="30dp"
             android:textStyle="normal" />
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnLaskawas"
+            android:layout_width="250dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/laskawaspng"
+            android:editable="false"
+            />
+
 
         <Button
             android:id="@+id/btnBoa"
             android:layout_width="250dp"
             android:layout_height="120dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/boa"
-            android:editable="false"
-            />
-
-
-        <Button
-            android:id="@+id/btnKawas"
-            android:layout_width="250dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="30dp"
-            android:background="@drawable/laskawas"
+            android:background="@drawable/boapng"
 
 
             />

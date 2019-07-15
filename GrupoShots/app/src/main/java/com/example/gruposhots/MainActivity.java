@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void Cambiar() {
         Intent cambio = new Intent (MainActivity.this,RecervaActivity.class);
         MainActivity.this.startActivity(cambio);
+        finish();
     }
 
 
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
 
-        progressDialog.setMessage("Realizando Login...");
+        progressDialog.setMessage("Iniciando Sesión...");
         progressDialog.show();
 
         /*
@@ -124,8 +125,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                             Toast.makeText(MainActivity.this, "Bienvenido " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                             Intent intencion = new Intent (getApplication(),PromocionActivity.class);
+
                             //intencion.putExtra(PromocionActivity.user, email);
                             startActivity(intencion);
+                            finish();
                         } else {
                             //si no se pudo acceder se muestra este mensaje
                             Toast.makeText(MainActivity.this, "No se pudo ingresar ", Toast.LENGTH_LONG).show();
@@ -154,9 +157,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 loginUsuario();
                 break;
         }
-
-
-
 
     }
 

@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login"
+    android:background="@drawable/pantalla1"
     tools:context=".MainActivity" >
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/pantalla2">
+        android:layout_height="match_parent">
 
         <EditText
             android:id="@+id/txtEmail"
@@ -18,7 +17,7 @@
             android:layout_height="56dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="256dp"
+            android:layout_marginTop="252dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/redondear"
@@ -28,10 +27,11 @@
             android:selectAllOnFocus="true"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="20dp"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.644"
+            app:layout_constraintHorizontal_bias="0.622"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,6 +51,7 @@
             android:inputType="textPassword"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
+            android:textCursorDrawable="@color/colorPrimary"
             android:textSize="20dp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -58,8 +59,7 @@
             app:layout_constraintHorizontal_bias="0.61"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtEmail"
-            app:layout_constraintVertical_bias="0.219"
-            />
+            app:layout_constraintVertical_bias="0.219" />
 
 
         <Button

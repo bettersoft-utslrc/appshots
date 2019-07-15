@@ -39,6 +39,7 @@ public class RecervaActivity extends AppCompatActivity  {
     private EditText pass;
     //private EditText passConfirm;
     private Button buttonRegistrar;
+    private ProgressDialog progressDialog;
 
    private String Nombre;
    private String Email;
@@ -63,6 +64,8 @@ public class RecervaActivity extends AppCompatActivity  {
    // passConfirm = (EditText)findViewById(R.id.txtPasswordConfirm);
     buttonRegistrar = (Button)findViewById(R.id.btnRegistro);
 
+
+        progressDialog = new ProgressDialog(this);
     buttonRegistrar.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -126,6 +129,9 @@ public class RecervaActivity extends AppCompatActivity  {
                     }
                 }
             });
+
+            progressDialog.setMessage("Realizando Registro...");
+            progressDialog.show();
         }
 
 }
