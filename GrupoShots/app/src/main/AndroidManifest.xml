@@ -11,17 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+
+        <activity android:name=".PerfilActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
-        <activity android:name=".RecervaKawasActivity" />
-        <activity android:name=".RecervaBoaActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RecervaKawasActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".RecervaBoaActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".seleccionLocalActivity"
             android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".RecervaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".PromocionActivity"
             android:label="@string/title_activity_promocion"

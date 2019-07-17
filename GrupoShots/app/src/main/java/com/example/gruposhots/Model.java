@@ -12,8 +12,8 @@ public class Model {
 
     String titulo, image, descripcion;
 
-    //constructor vacio de la clase
-    public Model(){}
+
+
 
     //getter y setter de las variables
     public String getTitulo() {

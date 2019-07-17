@@ -18,12 +18,13 @@ import com.squareup.picasso.Picasso;
 
 public class viewHolder extends RecyclerView.ViewHolder {
 
-    View nview;
+    View nview, nview2;
         //se crea el metodo viewHolder al implementar el extends a la clase
     public viewHolder(@NonNull View itemView) {
         super(itemView);
 
         nview = itemView;
+        nview2 = itemView;
 
     }
 
@@ -39,5 +40,8 @@ public class viewHolder extends RecyclerView.ViewHolder {
             Picasso.get().load(image).into(nImage);
 
         }
+
+
+
 
 }

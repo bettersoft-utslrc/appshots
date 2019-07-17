@@ -27,6 +27,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,6 +42,7 @@ public class PromocionActivity extends AppCompatActivity
 
 
 
+
     //Metodo onCreate cuando se incia la pantalla
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,8 @@ public class PromocionActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
 
 
@@ -92,6 +96,8 @@ public class PromocionActivity extends AppCompatActivity
 
 
 
+
+
     }
     //Cargamos datos dentro del recyclerView con el metado on star
 
@@ -99,6 +105,10 @@ public class PromocionActivity extends AppCompatActivity
     protected void onStart() {
         //cargamos las clases y instanciamos un firebaseRecyclerAdapter
         super.onStart();
+
+
+
+
         FirebaseRecyclerAdapter<Model, viewHolder> firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Model, viewHolder>(
                         Model.class,
@@ -112,6 +122,8 @@ public class PromocionActivity extends AppCompatActivity
                         nviewHolder.obtenerVistas(getApplicationContext(), model.getTitulo(), model.getDescripcion(), model.getImage());
                     }
                 };
+
+
 
         nRecyclerView.setAdapter(firebaseRecyclerAdapter);
     }
@@ -130,6 +142,7 @@ public class PromocionActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.promocion, menu);
+
         return true;
     }
 
@@ -151,6 +164,11 @@ public class PromocionActivity extends AppCompatActivity
         Intent cambio = new Intent (PromocionActivity.this,seleccionLocalActivity.class);
         PromocionActivity.this.startActivity(cambio);
     }
+    private void Cambiar2() {
+        Intent cambio = new Intent (PromocionActivity.this,PerfilActivity.class);
+        PromocionActivity.this.startActivity(cambio);
+    }
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -163,7 +181,7 @@ public class PromocionActivity extends AppCompatActivity
         } else if (id == R.id.SlHistorialRes) {
 
         } else if (id == R.id.SlPerfil) {
-
+            Cambiar2 ();
         }  else if (id == R.id.SlCerrarSesion) {
 
         }
@@ -174,5 +192,9 @@ public class PromocionActivity extends AppCompatActivity
 
 
     }
+
+
+
+
 
 }

@@ -30,17 +30,17 @@ public class seleccionLocalActivity extends AppCompatActivity implements View.On
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
-        int whith = dm.widthPixels;
+        int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(whith*.8),(int)(height*.6));
+        getWindow().setLayout((int)(width*.8),(int)(height*.7));
 
-        WindowManager.LayoutParams params = getWindow().getAttributes();
-        params.gravity = Gravity.CENTER;
-        params.x = -1;
-        params.y = -40;
+        WindowManager.LayoutParams parametros = getWindow().getAttributes();
+        parametros.gravity = Gravity.CENTER;
+        parametros.x = 5;
+        parametros.y = 20;
 
-        getWindow().setAttributes(params);
+        getWindow().setAttributes(parametros);
 
     }
     public void  cambiarBoa()
