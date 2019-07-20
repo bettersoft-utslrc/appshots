@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class PerfilActivity extends AppCompatActivity implements com.example.gruposhots.Dashboard.PerfilActivity.View {
 
-    private EditText edt_Nombre;
+    private EditText edt_Nombre, edt_Email, edt_pass;
     private Button btn_GuardarPerfil;
     private com.example.gruposhots.Dashboard.PerfilActivity.Presenter presenter;
 
@@ -33,17 +33,22 @@ public class PerfilActivity extends AppCompatActivity implements com.example.gru
     private void setViews() {
 
         edt_Nombre = findViewById (R.id.txtNombrePerfil);
+        edt_Email =findViewById (R.id.txtEmailPerfil);
+        edt_pass = findViewById (R.id.txtContraPerfil);
         btn_GuardarPerfil = findViewById (R.id.btnPerfil);
         presenter.onCharge ();
         btn_GuardarPerfil.setOnClickListener (new View.OnClickListener () {
             @Override
             public void onClick(View view) {
-                presenter.onSave (edt_Nombre.getText ().toString ().trim ());
+                presenter.onSave (edt_Nombre.getText ().toString ().trim (), edt_Email.getText ().toString ().trim (), edt_pass.getText ().toString ().trim ());
+
             }
         });
     }
     private void setInputs(boolean enable){
         edt_Nombre.setEnabled (enable);
+        edt_Email.setEnabled (enable);
+        edt_pass.setEnabled (enable);
         btn_GuardarPerfil.setEnabled (enable);
 
     }
@@ -60,8 +65,10 @@ public class PerfilActivity extends AppCompatActivity implements com.example.gru
     }
 
     @Override
-    public void fillEditText(String Nombre) {
+    public void fillEditText(String Nombre, String Email, String Password) {
         edt_Nombre.setText (Nombre);
+        edt_Email.setText (Email);
+        edt_pass.setText (Password);
 
     }
 

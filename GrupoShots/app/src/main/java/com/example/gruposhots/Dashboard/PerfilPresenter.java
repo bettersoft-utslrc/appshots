@@ -10,7 +10,7 @@ public class PerfilPresenter implements PerfilActivity.Presenter, PerfilActivity
     }
 
     @Override
-    public void onSave(String Nombre) {
+    public void onSave(String Nombre, String Email, String Password) {
         if(view !=null){
             view.disableInputs ();
             model.setNombre (Nombre);
@@ -23,6 +23,8 @@ public class PerfilPresenter implements PerfilActivity.Presenter, PerfilActivity
         if(view !=null){
             view.disableInputs ();
             model.chargeNombre ();
+            model.chargeEmail ();
+            model.chargePassword ();
         }
 
     }
@@ -37,14 +39,16 @@ public class PerfilPresenter implements PerfilActivity.Presenter, PerfilActivity
         if(view !=null){
 
             model.chargeNombre ();
+            model.chargeEmail ();
+            model.chargePassword ();
         }
     }
 
     @Override
-    public void onSucessCharge(String Nombre) {
+    public void onSucessCharge(String Nombre, String Email, String Password) {
         if (view !=null){
             view.enableInpuds ();
-            view.fillEditText (Nombre);
+            view.fillEditText (Nombre, Email, Password);
         }
     }
 

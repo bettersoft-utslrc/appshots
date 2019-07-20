@@ -7,12 +7,12 @@ public interface PerfilActivity {
         void enableInpuds();
         void disableInputs();
 
-        void fillEditText(String Nombre);
+        void fillEditText(String Nombre,String Email,String Password);
         void onError(String error);
     }
 
     interface Presenter{
-        void onSave(String Nombre);
+        void onSave(String Nombre,String Email,String Password);
         void onCharge();
 
         void onDestroy();
@@ -20,12 +20,17 @@ public interface PerfilActivity {
     interface Model{
         void chargeNombre();
         void setNombre(String Nombre);
+        void chargeEmail();
+        void setEmail(String Email);
+        void chargePassword();
+        void setPassword(String Password);
 
     }
 
     interface TaskListener{
         void onSucessSave();
-        void onSucessCharge(String Nombre);
+        void onSucessCharge(String Nombre, String Email, String Password);
+
         void onError(String error);
 
     }

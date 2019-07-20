@@ -12,7 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class PerfilModel implements PerfilActivity.Model {
+        public class PerfilModel implements PerfilActivity.Model {
 
     private PerfilActivity.TaskListener listener;
     private FirebaseDatabase database;
@@ -32,10 +32,13 @@ public class PerfilModel implements PerfilActivity.Model {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists ()){
-                    String Nombre = (String) dataSnapshot.child ("Nombre").getValue ();
-                    listener.onSucessCharge (Nombre);
-                }else {
-                    listener.onError ("No hay nombre");
+                    String  Nombre = (String) dataSnapshot.child ("Nombre").getValue ();
+                    String  email = (String) dataSnapshot.child ("Email").getValue ();
+                    String  password = (String) dataSnapshot.child ("Password").getValue ();
+                    listener.onSucessCharge (Nombre, email ,password);
+                }
+                else {
+                    listener.onError ("No hay datos");
                 }
             }
 
@@ -62,4 +65,50 @@ public class PerfilModel implements PerfilActivity.Model {
         });
 
     }
+
+            @Override
+            public void chargeEmail() {
+
+            }
+
+            @Override
+    public void setEmail(String Email) {
+        reference.child ("Email").setValue (Email).addOnCompleteListener (new OnCompleteListener<Void> () {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful ()){
+                    listener.onSucessSave ();
+                }else {
+                    if(task.getException ()!=null)
+                        listener.onError (task.getException ().getMessage ());
+                }
+            }
+        });
+
+
+
+    }
+
+            @Override
+            public void chargePassword() {
+
+            }
+
+            @Override
+    public void setPassword(String Password) {
+        reference.child ("Password").setValue (Password).addOnCompleteListener (new OnCompleteListener<Void> () {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful ()){
+                    listener.onSucessSave ();
+                }else {
+                    if(task.getException ()!=null)
+                        listener.onError (task.getException ().getMessage ());
+                }
+            }
+        });
+
+    }
+
+
 }
