@@ -14,6 +14,8 @@ public class PerfilPresenter implements PerfilActivity.Presenter, PerfilActivity
         if(view !=null){
             view.disableInputs ();
             model.setNombre (Nombre);
+            model.setEmail (Email);
+            model.setPassword (Password);
         }
 
     }
