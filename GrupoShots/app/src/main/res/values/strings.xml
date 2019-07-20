@@ -16,4 +16,9 @@
     <string name="promos">PROMOCIONES</string>
     <string name="nombre">Nombre</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="lugar">Selecciona tu lugar</string>
+    <string name="Numero_del_lugar">Numero del Lugar</string>
+    <string name="fecha">Fecha</string>
+    <string name="Reserva">Reservar</string>
+
 </resources>

@@ -12,7 +12,7 @@ public class Model {
 
     String titulo, image, descripcion;
 
-
+   public Model(){}
 
 
     //getter y setter de las variables
