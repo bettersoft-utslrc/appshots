@@ -27,8 +27,10 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:text="Seleccionar el local"
+            android:drawableRight="@drawable/ic_copas"
+
             android:textColor="#FFF"
-            android:textSize="30dp"
+            android:textSize="20dp"
             android:textStyle="normal" />
 
     </LinearLayout>
