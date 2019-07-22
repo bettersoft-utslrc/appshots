@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         >
 
-       
+
 
         <EditText
             android:id="@+id/txtEmail"
@@ -26,6 +26,7 @@
             android:layout_marginRight="8dp"
             android:background="@drawable/redondear"
             android:drawableLeft="@drawable/ic_email"
+            android:focusable="true"
             android:ems="10"
             android:hint="@string/enter_email"
             android:inputType="textEmailAddress"

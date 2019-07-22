@@ -37,8 +37,8 @@ public class seleccionLocalActivity extends AppCompatActivity implements View.On
 
         WindowManager.LayoutParams parametros = getWindow().getAttributes();
         parametros.gravity = Gravity.CENTER;
-        parametros.x = 5;
-        parametros.y = 20;
+        parametros.x = 0;
+        parametros.y = -50;
 
         getWindow().setAttributes(parametros);
 
