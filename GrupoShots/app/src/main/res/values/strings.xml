@@ -20,5 +20,7 @@
     <string name="Numero_del_lugar">Numero del Lugar</string>
     <string name="fecha">Fecha</string>
     <string name="Reserva">Reservar</string>
+    <string name="lugar_reserva">Lugar: BOA</string>
+    <string name="Confirmar">Confirmar</string>
 
 </resources>
