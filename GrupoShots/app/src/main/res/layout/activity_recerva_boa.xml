@@ -118,6 +118,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="80dp"
         android:background="@drawable/perfil_boton"
+        android:onClick="enviarDatos"
         android:text="@string/Reserva"
         android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
