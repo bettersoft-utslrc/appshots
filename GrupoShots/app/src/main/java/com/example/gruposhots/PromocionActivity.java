@@ -11,6 +11,7 @@ package com.example.gruposhots;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
@@ -27,9 +28,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -37,10 +43,15 @@ import com.google.firebase.database.ValueEventListener;
 public class PromocionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener  {
 
+
+
     //Definimos los objetos del recyclerView y la base de datos en firebase
-   RecyclerView nRecyclerView;
+
+    RecyclerView nRecyclerView;
    FirebaseDatabase nfirebaseDatabase;
-   DatabaseReference nRef;
+   DatabaseReference nRef ;
+
+
 
 
 
@@ -50,6 +61,7 @@ public class PromocionActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promocion);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -84,6 +96,11 @@ public class PromocionActivity extends AppCompatActivity
 
         //Set tittle
         actionBar.setTitle("Promociones y Eventos");
+
+
+
+
+
 
 
         // referenciamos RecicleView desde la vista
@@ -125,6 +142,7 @@ public class PromocionActivity extends AppCompatActivity
                         nviewHolder.obtenerVistas(getApplicationContext(), model.getTitulo(), model.getDescripcion(), model.getImage());
                     }
                 };
+       
 
 
 

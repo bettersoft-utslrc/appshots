@@ -26,9 +26,9 @@ public class RecervaBoaActivity extends AppCompatActivity {
         Spiner3 = (Spinner) findViewById (R.id.SpinnerMesa);
         Fecha = (EditText) findViewById (R.id.txtFecha);
 
-        String [] salon = {"0","1", "2", "3"};
-        String [] VIP= {"0","1", "2","3","4"};
-        String [] Mesa= {"0","1", "2","3","4", "5"};
+        String [] salon = {"- -","0","1", "2", "3"};
+        String [] VIP= {"- -","0","1", "2","3","4"};
+        String [] Mesa= {"- -","0","1", "2","3","4", "5"};
 
         ArrayAdapter <String> adapter = new ArrayAdapter<String> (this,R.layout.spinner_item_reservas,salon);
         Spiner1.setAdapter (adapter);

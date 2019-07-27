@@ -35,7 +35,7 @@ public class ConfirmacionReservaBoaActivity extends AppCompatActivity {
 
         Nombre = (TextView) findViewById (R.id.txtnombreResiver);
 
-        reference.child (user.getUid ()).addValueEventListener (new ValueEventListener () {
+        reference.addListenerForSingleValueEvent (new ValueEventListener () {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if(dataSnapshot.exists ()){
@@ -50,6 +50,7 @@ public class ConfirmacionReservaBoaActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+
         });
 
 
@@ -69,6 +70,8 @@ public class ConfirmacionReservaBoaActivity extends AppCompatActivity {
         Mesa = (TextView) findViewById (R.id.txtMesaResiver);
         String mesa = getIntent ().getStringExtra ("mesa");
         Mesa.setText ("Numero de mesa : " +  mesa);
+
+
 
 
 

@@ -22,5 +22,6 @@
     <string name="Reserva">Reservar</string>
     <string name="lugar_reserva">Lugar: BOA</string>
     <string name="Confirmar">Confirmar</string>
+    <string name="Sala">Sala</string>
 
 </resources>
