@@ -50,10 +50,5 @@ public class RecervaBoaActivity extends AppCompatActivity {
         enviar.putExtra ("vip", Spiner2.getSelectedItem ().toString ());
         enviar.putExtra ("mesa", Spiner3.getSelectedItem ().toString ());
         startActivity (enviar);
-
-
-
-
-
     }
 }
