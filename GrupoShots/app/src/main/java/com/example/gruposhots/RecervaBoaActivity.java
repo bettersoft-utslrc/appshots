@@ -1,6 +1,7 @@
 package com.example.gruposhots;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,6 +40,17 @@ public class RecervaBoaActivity extends AppCompatActivity {
         ArrayAdapter <String> adapter3 = new ArrayAdapter<String> (this,R.layout.spinner_item_reservas,Mesa);
         Spiner3.setAdapter (adapter3);
 
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_boa);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cambio = new Intent (RecervaBoaActivity.this,MapaBoaActivity.class);
+                RecervaBoaActivity.this.startActivity(cambio);
+
+
+            }
+        });
 
     }
 

@@ -2,10 +2,10 @@
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textColor="#ffffff"
+    android:textColor="#000"
     android:textSize="20dp"
     android:padding="10dp"
-    android:backgroundTint="#76ff03"
+    android:backgroundTint="#64dd17"
     android:background="#000"
 
 
