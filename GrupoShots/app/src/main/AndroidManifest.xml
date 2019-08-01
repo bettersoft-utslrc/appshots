@@ -11,9 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapaBoaActivity"
+        <activity android:name=".MapaKawasActivity"
             android:theme="@style/AppTheme.CustomTheme"
             ></activity>
+        <activity
+            android:name=".MapaBoaActivity"
+            android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".ConfirmacionReservaKawasActivity"
             android:theme="@style/AppTheme.NoActionBar" />

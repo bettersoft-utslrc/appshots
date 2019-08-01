@@ -15,6 +15,7 @@ public class Model {
    public Model(){}
 
 
+
     //getter y setter de las variables
     public String getTitulo() {
         return titulo;

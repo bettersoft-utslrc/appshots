@@ -1,6 +1,7 @@
 package com.example.gruposhots;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,8 @@ public class RecervaKawasActivity extends AppCompatActivity {
         Spinner2 = (Spinner) findViewById (R.id.spinnerMesaKawas);
         Fecha = (EditText) findViewById (R.id.txtFechaKawas);
 
+
+
         String [] VIP= {"- -","0","1", "2","3","4"};
         String [] Mesa= {"- -","0","1", "2","3","4", "5"};
 
@@ -32,8 +35,21 @@ public class RecervaKawasActivity extends AppCompatActivity {
         ArrayAdapter <String> adapter2 = new ArrayAdapter<String> (this,R.layout.spinner_item_reservas,Mesa);
         Spinner2.setAdapter (adapter2);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_kawas);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cambio = new Intent (RecervaKawasActivity.this,MapaKawasActivity.class);
+                RecervaKawasActivity.this.startActivity(cambio);
+
+
+            }
+        });
+
+
 
     }
+
     public void enviarDatos2(View view){
         Intent enviar = new Intent (this, ConfirmacionReservaKawasActivity.class);
         enviar.putExtra ("fecha", Fecha.getText ().toString ());
@@ -41,4 +57,5 @@ public class RecervaKawasActivity extends AppCompatActivity {
         enviar.putExtra ("mesa", Spinner2.getSelectedItem ().toString ());
         startActivity (enviar);
     }
+
 }
