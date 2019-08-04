@@ -42,34 +42,18 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PromocionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener  {
-
-
-
     //Definimos los objetos del recyclerView y la base de datos en firebase
-
     RecyclerView nRecyclerView;
    FirebaseDatabase nfirebaseDatabase;
    DatabaseReference nRef ;
-
-
-
-
-
-
-    //Metodo onCreate cuando se incia la pantalla
+   //Metodo onCreate cuando se incia la pantalla
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promocion);
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -77,10 +61,7 @@ public class PromocionActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent cambio = new Intent (PromocionActivity.this,seleccionLocalActivity.class);
                 PromocionActivity.this.startActivity(cambio);
-
-
-            }
-        });
+            }});
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -96,13 +77,6 @@ public class PromocionActivity extends AppCompatActivity
 
         //Set tittle
         actionBar.setTitle("Promociones y Eventos");
-
-
-
-
-
-
-
         // referenciamos RecicleView desde la vista
         nRecyclerView = findViewById(R.id.recyclerView);
         nRecyclerView.setHasFixedSize(true);
@@ -113,11 +87,6 @@ public class PromocionActivity extends AppCompatActivity
         // Mandamos el query a la base de datos
         nfirebaseDatabase = FirebaseDatabase.getInstance();
         nRef= nfirebaseDatabase.getReference("publicidad");
-
-
-
-
-
     }
     //Cargamos datos dentro del recyclerView con el metado on star
 
@@ -125,10 +94,6 @@ public class PromocionActivity extends AppCompatActivity
     protected void onStart() {
         //cargamos las clases y instanciamos un firebaseRecyclerAdapter
         super.onStart();
-
-
-
-
         FirebaseRecyclerAdapter<Model, viewHolder> firebaseRecyclerAdapter =
                 new FirebaseRecyclerAdapter<Model, viewHolder>(
                         Model.class,
@@ -142,13 +107,8 @@ public class PromocionActivity extends AppCompatActivity
                         nviewHolder.obtenerVistas(getApplicationContext(), model.getTitulo(), model.getDescripcion(), model.getImage());
                     }
                 };
-       
-
-
-
         nRecyclerView.setAdapter(firebaseRecyclerAdapter);
     }
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

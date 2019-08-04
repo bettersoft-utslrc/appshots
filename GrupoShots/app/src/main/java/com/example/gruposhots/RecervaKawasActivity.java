@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class RecervaKawasActivity extends AppCompatActivity {
@@ -26,8 +27,10 @@ public class RecervaKawasActivity extends AppCompatActivity {
 
 
 
-        String [] VIP= {"- -","0","1", "2","3","4"};
-        String [] Mesa= {"- -","0","1", "2","3","4", "5"};
+
+
+        String [] VIP= {"- -","1", "2","3"};
+        String [] Mesa= {"- -","0","1", "2","3","4", "5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String> (this,R.layout.spinner_item_reservas,VIP);
         Spinner1.setAdapter (adapter);
