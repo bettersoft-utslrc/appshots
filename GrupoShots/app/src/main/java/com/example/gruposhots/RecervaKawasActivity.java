@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.r0adkll.slidr.Slidr;
+
 
 public class RecervaKawasActivity extends AppCompatActivity {
     public Spinner Spinner1;
@@ -20,6 +22,7 @@ public class RecervaKawasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recerva_kawas);
+        Slidr.attach (this);
 
         Spinner1 = (Spinner) findViewById (R.id.spinnerVipKawas);
         Spinner2 = (Spinner) findViewById (R.id.spinnerMesaKawas);

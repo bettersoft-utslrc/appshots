@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MapaKawasActivity"
-            android:theme="@style/AppTheme.CustomTheme"
+            android:theme="@style/AppTheme.slide"
             ></activity>
         <activity
             android:name=".MapaBoaActivity"
-            android:theme="@style/AppTheme.CustomTheme" />
+            android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".ConfirmacionReservaKawasActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -25,16 +25,16 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PerfilActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RecervaKawasActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".RecervaBoaActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".seleccionLocalActivity"
             android:theme="@style/AppTheme.CustomTheme" />

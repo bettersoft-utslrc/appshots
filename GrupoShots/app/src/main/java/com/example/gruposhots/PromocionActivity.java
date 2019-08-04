@@ -84,11 +84,11 @@ public class PromocionActivity extends AppCompatActivity
         //obtenemos layout como LinearLayout
         nRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Mandamos el query a la base de datos
+        // Obtenemos la base de datos y referencia de la tabla
         nfirebaseDatabase = FirebaseDatabase.getInstance();
         nRef= nfirebaseDatabase.getReference("publicidad");
     }
-    //Cargamos datos dentro del recyclerView con el metado on star
+    //Cargamos datos dentro del recyclerView con el metado onstart
 
     @Override
     protected void onStart() {

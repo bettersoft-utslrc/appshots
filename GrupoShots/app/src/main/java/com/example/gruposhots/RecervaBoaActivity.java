@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.gruposhots.Dashboard.PerfilActivity;
+import com.r0adkll.slidr.Slidr;
 
 public class RecervaBoaActivity extends AppCompatActivity {
 
@@ -23,6 +24,7 @@ public class RecervaBoaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recerva_boa);
+        Slidr.attach (this);
 
         Spiner1 = (Spinner) findViewById (R.id.spinnerSalon);
         Spiner2 = (Spinner) findViewById (R.id.spinnerVip);

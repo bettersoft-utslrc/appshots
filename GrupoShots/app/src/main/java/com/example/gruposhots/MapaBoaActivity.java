@@ -7,6 +7,8 @@ import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.WindowManager;
 
+import com.r0adkll.slidr.Slidr;
+
 import static android.view.Gravity.CENTER;
 
 public class MapaBoaActivity extends Activity {
@@ -17,7 +19,6 @@ public class MapaBoaActivity extends Activity {
         setContentView (R.layout.activity_mapa_boa);
 
 
-
-
+        Slidr.attach (this);
     }
 }

@@ -13,6 +13,7 @@ import com.example.gruposhots.Dashboard.PerfilPresenter;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.r0adkll.slidr.Slidr;
 
 public class PerfilActivity extends AppCompatActivity implements com.example.gruposhots.Dashboard.PerfilActivity.View {
 
@@ -26,6 +27,7 @@ public class PerfilActivity extends AppCompatActivity implements com.example.gru
         presenter = new PerfilPresenter(this);
         setContentView (R.layout.activity_perfil);
         setViews();
+        Slidr.attach (this);
 
 
     }
