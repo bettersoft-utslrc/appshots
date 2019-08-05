@@ -6,13 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/redondeolayoud"
+    android:background="#000"
     android:orientation="vertical"
     android:padding="5dp"
     tools:context=".seleccionLocalActivity">
 
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -26,8 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Seleccionar el local"
             android:drawableRight="@drawable/ic_copas"
+            android:text="Seleccionar el local"
 
             android:textColor="#FFF"
             android:textSize="20dp"
@@ -36,50 +37,47 @@
     </LinearLayout>
 
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
     <Button
         android:id="@+id/btnLaskawas"
-        android:layout_width="280dp"
-        android:layout_height="170dp"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/laskawaspng"
-        android:editable="false"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/laskawalocal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
     <Button
         android:id="@+id/btnBoa"
-        android:layout_width="280dp"
-        android:layout_height="170dp"
+        android:layout_width="200dp"
+        android:layout_height="120dp"
         android:layout_gravity="center_horizontal"
+
+
         android:layout_marginStart="8dp"
-
-
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/boapng"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/boalocal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLaskawas"
-        app:layout_constraintVertical_bias="0.464" />
+        app:layout_constraintTop_toBottomOf="@+id/btnLaskawas" />
+
+
+
+
+
+
+
 
 
 

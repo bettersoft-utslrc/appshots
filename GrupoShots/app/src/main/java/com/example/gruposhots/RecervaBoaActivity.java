@@ -1,12 +1,17 @@
 package com.example.gruposhots;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -14,12 +19,18 @@ import android.widget.Toast;
 import com.example.gruposhots.Dashboard.PerfilActivity;
 import com.r0adkll.slidr.Slidr;
 
-public class RecervaBoaActivity extends AppCompatActivity {
+import java.util.Calendar;
+
+public class RecervaBoaActivity extends AppCompatActivity implements View.OnClickListener {
 
     public Spinner Spiner1;
     public Spinner Spiner2;
     public Spinner Spiner3;
     public EditText Fecha;
+    public Button btnFecha;
+
+    private int dia, mes, ano;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +41,9 @@ public class RecervaBoaActivity extends AppCompatActivity {
         Spiner2 = (Spinner) findViewById (R.id.spinnerVip);
         Spiner3 = (Spinner) findViewById (R.id.SpinnerMesa);
         Fecha = (EditText) findViewById (R.id.txtFecha);
+        btnFecha = (Button)findViewById (R.id.btnFechaBoa);
+
+        btnFecha.setOnClickListener (this);
 
         String [] salon = {"- -","1", "2", "3","4","5","6"};
         String [] VIP= {"- -","1", "2","3","4"};
@@ -75,6 +89,29 @@ public class RecervaBoaActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(view==btnFecha){
+            final Calendar c = Calendar.getInstance ();
+            dia=c.get (Calendar.DAY_OF_MONTH);
+            mes=c.get (Calendar.MONTH);
+            ano=c.get (Calendar.YEAR);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog (this, new DatePickerDialog.OnDateSetListener () {
+                @Override
+                public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                    Fecha.setText (i2+"/"+(i1+1)+"/"+i);
+
+                }
+            }
+            ,dia,mes,ano);
+
+            datePickerDialog.show ();
+
+        }
 
     }
 }

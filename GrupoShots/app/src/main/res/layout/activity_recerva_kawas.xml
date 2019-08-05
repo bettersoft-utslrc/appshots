@@ -53,19 +53,18 @@
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:background="@drawable/perfil_boton"
+        android:backgroundTint="#76ff03"
         android:ems="10"
         android:gravity="center"
-        android:hint="@string/fecha"
         android:inputType="datetime"
         android:orientation="horizontal"
         android:textColor="#FFFFFF"
         android:textColorHint="#fff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.83"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -75,7 +74,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
         android:layout_marginLeft="92dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:text="VIP"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
@@ -86,7 +85,7 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="92dp"
         android:layout_marginRight="92dp"
         android:text="Mesa"
@@ -97,7 +96,7 @@
 
     <Spinner
         android:id="@+id/spinnerVipKawas"
-        android:layout_width="90dp"
+        android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
@@ -108,7 +107,7 @@
 
     <Spinner
         android:id="@+id/spinnerMesaKawas"
-        android:layout_width="90dp"
+        android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="80dp"
@@ -136,8 +135,8 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerMesaKawas" />
 
     <LinearLayout
-        android:layout_width="312dp"
-        android:layout_height="169dp"
+        android:layout_width="383dp"
+        android:layout_height="142dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
@@ -161,6 +160,23 @@
             app:srcCompat="@drawable/ic_ubicacion3" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnFechaKawas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/perfil_boton"
+        android:text="@string/fecha"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/txtFechaKawas"
+        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtFechaKawas"
+        tools:text="@string/fecha" />
 
 
 </android.support.constraint.ConstraintLayout>
