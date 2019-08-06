@@ -1,8 +1,12 @@
 package com.example.gruposhots;
 
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +17,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatReader;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class ConfirmacionReservaKawasActivity extends AppCompatActivity {
     private TextView Fecha;
@@ -22,11 +32,15 @@ public class ConfirmacionReservaKawasActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private FirebaseUser user;
+    private ImageView QR;
+    private Button btnCodigo;
+    String text2Qr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_confirmacion_reserva_kawas);
+
 
         database = FirebaseDatabase.getInstance ();
         user = FirebaseAuth.getInstance ().getCurrentUser ();
@@ -53,6 +67,13 @@ public class ConfirmacionReservaKawasActivity extends AppCompatActivity {
         });
 
 
+
+
+
+
+
+
+
         Fecha = (TextView) findViewById (R.id.txtFechaKawasResiver);
         String fecha = getIntent ().getStringExtra ("fecha");
         Fecha.setText ("Fecha: " + fecha);
@@ -65,4 +86,10 @@ public class ConfirmacionReservaKawasActivity extends AppCompatActivity {
         String mesa = getIntent ().getStringExtra ("mesa");
         Mesa.setText ("Numero de mesa : " +  mesa);
     }
+
+
+
+
+
+
 }

@@ -33,7 +33,7 @@ public class seleccionLocalActivity extends AppCompatActivity implements View.On
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.8),(int)(height*.7));
+        getWindow().setLayout((int)(width*.8),(int)(height*.8));
 
         WindowManager.LayoutParams parametros = getWindow().getAttributes();
         parametros.gravity = Gravity.CENTER;
