@@ -11,9 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MapaKawasActivity"
-            android:theme="@style/AppTheme.slide"
-            ></activity>
+        <activity android:name=".HistorialActivity"></activity>
+        <activity android:name=".BetterSoftActivity" />
+        <activity
+            android:name=".MapaKawasActivity"
+            android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".MapaBoaActivity"
             android:theme="@style/AppTheme.slide" />

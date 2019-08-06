@@ -16,6 +16,10 @@
             android:id="@+id/SlPerfil"
             android:icon="@drawable/iconoperfil"
             android:title="Perfil" />
+        <item
+            android:id="@+id/SlBetter"
+            android:icon="@drawable/ic_maletin"
+            android:title="BetterSoft" />
 
     </group>
 

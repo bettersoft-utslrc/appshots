@@ -149,6 +149,10 @@ public class PromocionActivity extends AppCompatActivity
         Intent cambio = new Intent (PromocionActivity.this,PerfilActivity.class);
         PromocionActivity.this.startActivity(cambio);
     }
+    private void Cambiar3() {
+        Intent cambio = new Intent (PromocionActivity.this,BetterSoftActivity.class);
+        PromocionActivity.this.startActivity(cambio);
+    }
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -165,6 +169,8 @@ public class PromocionActivity extends AppCompatActivity
             Cambiar2 ();
         }  else if (id == R.id.SlCerrarSesion) {
 
+        } else if(id == R.id.SlBetter ){
+            Cambiar3 ();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
