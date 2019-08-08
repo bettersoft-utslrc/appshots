@@ -18,13 +18,13 @@ import com.squareup.picasso.Picasso;
 
 public class viewHolder extends RecyclerView.ViewHolder {
 
-    View nview;
+    View nview, nview2;
         //se crea el metodo viewHolder al implementar el extends a la clase
     public viewHolder(@NonNull View itemView) {
         super(itemView);
 
         nview = itemView;
-
+        nview2 = itemView;
     }
 
         //en este metodo se obtienen las vistas desde el archivo xml
@@ -38,7 +38,24 @@ public class viewHolder extends RecyclerView.ViewHolder {
             nDescripcion.setText(descripcion);
             Picasso.get().load(image).into(nImage);
 
-        }
+        } public void obtenerVistas2(Context ctx, String usuario, String lugar, String fecha, String estado, String establecimiento)
+    {
+        TextView Husuario = nview.findViewById(R.id.txtUsuarioHistorial);
+        TextView Hlugar = nview.findViewById(R.id.txtLugarHistorial);
+        TextView Hfecha = nview.findViewById(R.id.txtFechaHistorial);
+        TextView Hestado = nview.findViewById(R.id.txtEstadoHistorial);
+        TextView Hestablecimiento = nview.findViewById(R.id.txtEstaHist);
+
+        Husuario.setText (usuario);
+        Hlugar.setText (lugar);
+        Hfecha.setText (fecha);
+        Hestado.setText (estado);
+        Hestablecimiento.setText (establecimiento);
+
+
+
+
+    }
 
 
 

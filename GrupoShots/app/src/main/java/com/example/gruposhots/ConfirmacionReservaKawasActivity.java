@@ -80,9 +80,10 @@ public class ConfirmacionReservaKawasActivity extends AppCompatActivity {
 
         Vip = (TextView) findViewById (R.id.txtVipKawasResiver);
         String vip = getIntent ().getStringExtra ("vip");
+
         Vip.setText ("Numero de Vip :" + vip);
 
-        Mesa = (TextView) findViewById (R.id.txtMesaKawasResiver);
+       Mesa = (TextView) findViewById (R.id.txtMesaKawasResiver);
         String mesa = getIntent ().getStringExtra ("mesa");
         Mesa.setText ("Numero de mesa : " +  mesa);
     }

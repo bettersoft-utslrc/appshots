@@ -45,7 +45,6 @@ public class RecervaActivity extends AppCompatActivity  {
    private String Email;
     private String Password;
   //  private String PasswordConfirm;
-
     FirebaseAuth nAuth;
     DatabaseReference nData;
 

@@ -13,6 +13,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
     <style name="AppTheme.slide">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -25,10 +26,12 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     
     <style name="AppTheme.CustomTheme">
-        <item name="android:windowIsTranslucent">true</item>
+
         <item name="android:windowCloseOnTouchOutside">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/background_light</item>
 
 
     </style>

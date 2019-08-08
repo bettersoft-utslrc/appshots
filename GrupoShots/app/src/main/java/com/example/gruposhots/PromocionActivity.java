@@ -1,12 +1,12 @@
 package com.example.gruposhots;
 
 /*
- * author: Raul Paolo Payan
- * version: 0.3
+ *
  *
  * Esta clase es la pantalla de promociones donde se muestran y  cargan los datos desde la
  * base de datos
- *
+ *author: Raul Paolo Payan
+ * version: 0.3
  */
 import android.app.Dialog;
 import android.content.Intent;
@@ -153,6 +153,10 @@ public class PromocionActivity extends AppCompatActivity
         Intent cambio = new Intent (PromocionActivity.this,BetterSoftActivity.class);
         PromocionActivity.this.startActivity(cambio);
     }
+    private void Cambiar4() {
+        Intent cambio = new Intent (PromocionActivity.this,HistorialActivity.class);
+        PromocionActivity.this.startActivity(cambio);
+    }
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -164,6 +168,7 @@ public class PromocionActivity extends AppCompatActivity
         if (id == R.id.SlReservacion) {
             Cambiar();
         } else if (id == R.id.SlHistorialRes) {
+            Cambiar4 ();
 
         } else if (id == R.id.SlPerfil) {
             Cambiar2 ();

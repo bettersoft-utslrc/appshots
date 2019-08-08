@@ -70,10 +70,21 @@ public class RecervaKawasActivity extends AppCompatActivity implements View.OnCl
 
     public void enviarDatos2(View view){
         Intent enviar = new Intent (this, ConfirmacionReservaKawasActivity.class);
+
         enviar.putExtra ("fecha", Fecha.getText ().toString ());
-        enviar.putExtra ("vip", Spinner1.getSelectedItem ().toString ());
-        enviar.putExtra ("mesa", Spinner2.getSelectedItem ().toString ());
-        startActivity (enviar);
+
+
+            enviar.putExtra ("vip", Spinner1.getSelectedItem ().toString ());
+
+
+            enviar.putExtra ("mesa", Spinner2.getSelectedItem ().toString ());
+
+
+
+            startActivity (enviar);
+
+
+
     }
 
     @Override

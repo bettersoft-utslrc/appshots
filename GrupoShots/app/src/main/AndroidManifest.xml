@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HistorialActivity"></activity>
-        <activity android:name=".BetterSoftActivity" />
+
+        <activity android:name=".HistorialActivity"
+            android:theme="@style/AppTheme.slide"></activity>
+        <activity android:name=".BetterSoftActivity"
+            android:theme="@style/AppTheme.slide"/>
         <activity
             android:name=".MapaKawasActivity"
             android:theme="@style/AppTheme.slide" />
@@ -21,10 +24,11 @@
             android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".ConfirmacionReservaKawasActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.slide" />
+
         <activity
             android:name=".ConfirmacionReservaBoaActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.slide"/>
         <activity
             android:name=".PerfilActivity"
             android:theme="@style/AppTheme.slide" />

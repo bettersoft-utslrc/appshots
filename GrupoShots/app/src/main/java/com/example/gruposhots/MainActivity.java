@@ -113,9 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         progressDialog.show();
 
         /*
-        Logear Usuario mediante el objeto de nuesta base de datos con el metodo singWithEmailAndPassword
-
-         */
+        Logear Usuario mediante el objeto de nuesta base de datos con el metodo singWithEmailAndPassword*/
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -138,9 +136,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
 
     }
-
-
-
     @Override
     /*
     *aqui esta un ciclo switch en el metodo onClick para que cumpla la funcion espesificada
