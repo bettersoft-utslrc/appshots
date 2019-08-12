@@ -47,12 +47,14 @@ public class seleccionLocalActivity extends AppCompatActivity implements View.On
     {
         Intent cambio = new Intent (seleccionLocalActivity.this,RecervaBoaActivity.class);
         seleccionLocalActivity.this.startActivity(cambio);
+        finish();
     }
 
     public void cambiarKawas()
     {
         Intent cambio = new Intent (seleccionLocalActivity.this,RecervaKawasActivity.class);
         seleccionLocalActivity.this.startActivity(cambio);
+        finish();
     }
 
 

@@ -32,6 +32,9 @@ import com.google.firebase.auth.FirebaseAuth; //
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    public static final String EXTRA_MESSAGE = "com.example.gruposhots.MESSAGE";
+
+
 
     //aqui Definimos los objetos de la vista
     private EditText TextEmail;
@@ -79,8 +82,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         *RecervaActivity
          */
     private void Cambiar() {
-        Intent cambio = new Intent (MainActivity.this,RecervaActivity.class);
-        MainActivity.this.startActivity(cambio);
+        Intent intent = new Intent (MainActivity.this,RecervaActivity.class);
+        MainActivity.this.startActivity(intent);
         finish();
     }
 
@@ -123,8 +126,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                             Toast.makeText(MainActivity.this, "Bienvenido " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                             Intent intencion = new Intent (getApplication(),PromocionActivity.class);
-
-                            //intencion.putExtra(PromocionActivity.user, email);
+                            String message = TextEmail.getText().toString();
+                            intencion.putExtra(EXTRA_MESSAGE, message);
                             startActivity(intencion);
                             finish();
                         } else {

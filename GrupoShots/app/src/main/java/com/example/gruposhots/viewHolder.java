@@ -7,9 +7,14 @@ package com.example.gruposhots;
  *
  */
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,23 +43,54 @@ public class viewHolder extends RecyclerView.ViewHolder {
             nDescripcion.setText(descripcion);
             Picasso.get().load(image).into(nImage);
 
-        } public void obtenerVistas2(Context ctx, String usuario, String lugar, String fecha, String estado, String establecimiento)
+        } public void obtenerVistas2(Context ctx, String usuario, String lugar, String fecha, String estado, String establecimiento, String key)
     {
         TextView Husuario = nview.findViewById(R.id.txtUsuarioHistorial);
         TextView Hlugar = nview.findViewById(R.id.txtLugarHistorial);
         TextView Hfecha = nview.findViewById(R.id.txtFechaHistorial);
         TextView Hestado = nview.findViewById(R.id.txtEstadoHistorial);
         TextView Hestablecimiento = nview.findViewById(R.id.txtEstaHist);
+        LinearLayoutCompat cardHistorial = (LinearLayoutCompat) nview.findViewById(R.id.layoutHistorial);
+        CardView cardV = (CardView) nview.findViewById(R.id.cardV1);
 
         Husuario.setText (usuario);
         Hlugar.setText (lugar);
         Hfecha.setText (fecha);
-        Hestado.setText (estado);
         Hestablecimiento.setText (establecimiento);
 
+        Button btnCodigo = (Button) nview.findViewById(R.id.btnCode);
+        btnCodigo.setContentDescription(new StringBuffer(key));
+        Button btnCancel = (Button) nview.findViewById(R.id.btnCancel);
+        btnCancel.setContentDescription(new StringBuffer(key));
+        Button btnEliminar = (Button) nview.findViewById(R.id.btnEliminar);
+        btnEliminar.setContentDescription(new StringBuffer(key));
 
 
+        TextView Hcodigo = nview.findViewById(R.id.txtCodigo);
+        Hcodigo.setText(key);
+        Husuario.setVisibility(View.GONE);
 
+        if(estado.equals("completado")){
+            btnCodigo.setVisibility(View.GONE);
+            btnCancel.setVisibility(View.GONE);
+            btnEliminar.setVisibility(View.VISIBLE);
+            Hestado.setText("Completado");
+            Hestado.setTextColor(Color.GREEN);
+        }
+        else if(estado.equals("cancelado")){
+            btnCodigo.setVisibility(View.GONE);
+            btnCancel.setVisibility(View.GONE);
+            btnEliminar.setVisibility(View.VISIBLE);
+            Hestado.setText("Cancelado");
+            Hestado.setTextColor(Color.RED);
+        }
+        else if(estado.equals("espera")){
+            Hestado.setText("Por asistir");
+        }
+        else if(estado.equals("eliminado")){
+            cardHistorial.setVisibility(View.GONE);
+            cardV.setVisibility(View.GONE);
+        }
     }
 
 

@@ -57,7 +57,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:backgroundTint="#76ff03"
+        android:clickable="false"
+        android:editable="false"
         android:ems="10"
+        android:enabled="false"
         android:gravity="center"
         android:inputType="datetime"
         android:orientation="horizontal"
@@ -76,7 +79,7 @@
         android:layout_marginLeft="92dp"
         android:layout_marginTop="32dp"
         android:text="VIP"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFechaKawas" />
@@ -89,7 +92,7 @@
         android:layout_marginEnd="92dp"
         android:layout_marginRight="92dp"
         android:text="Mesa"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFechaKawas" />
@@ -98,8 +101,8 @@
         android:id="@+id/spinnerVipKawas"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginLeft="55dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#76ff03"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,11 +113,50 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginRight="45dp"
         android:backgroundTint="#76ff03"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerMesaKawas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaKawas">
+
+        <RadioButton
+            android:id="@+id/rdoVIP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/colorWhite"
+            android:text="VIP"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rdoMesa"
+            style="@android:style/Widget.DeviceDefault.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:buttonTint="@color/colorWhite"
+            android:text="Mesa"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/btnReservaKawas"

@@ -26,6 +26,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class PromocionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener  {
+
+    FirebaseAuth mAuth;
+    public static final String EXTRA_MESSAGE = "com.example.gruposhots.MESSAGE";
+    private TextView txtEmailU;
+    private String message;
+
     //Definimos los objetos del recyclerView y la base de datos en firebase
     RecyclerView nRecyclerView;
    FirebaseDatabase nfirebaseDatabase;
@@ -51,6 +58,12 @@ public class PromocionActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promocion);
+
+        Intent intent = getIntent();
+        message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -124,6 +137,9 @@ public class PromocionActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.promocion, menu);
 
+        txtEmailU = (TextView) findViewById(R.id.txtUsuarioEmailHead);
+        txtEmailU.setText(message);
+
         return true;
     }
 
@@ -155,6 +171,7 @@ public class PromocionActivity extends AppCompatActivity
     }
     private void Cambiar4() {
         Intent cambio = new Intent (PromocionActivity.this,HistorialActivity.class);
+        cambio.putExtra(EXTRA_MESSAGE, message);
         PromocionActivity.this.startActivity(cambio);
     }
 
