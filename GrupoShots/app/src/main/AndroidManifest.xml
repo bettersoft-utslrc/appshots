@@ -34,7 +34,7 @@
             android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".RecervaKawasActivity"
             android:theme="@style/AppTheme.slide" />
@@ -46,7 +46,7 @@
             android:theme="@style/AppTheme.CustomTheme" />
         <activity
             android:name=".RecervaActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.slide" />
         <activity
             android:name=".PromocionActivity"
             android:label="@string/title_activity_promocion"

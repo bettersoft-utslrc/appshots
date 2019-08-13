@@ -116,7 +116,7 @@ public class RecervaActivity extends AppCompatActivity  {
                             public void onComplete(@NonNull Task<Void> task2) {
                                 if(task2.isSuccessful()){
                                     startActivity(new Intent(RecervaActivity.this, PromocionActivity.class));
-                                    finish();
+
                                 }
                                 else {
                                     Toast.makeText(RecervaActivity.this, "No se pudieron crear los datos", Toast.LENGTH_SHORT).show();
